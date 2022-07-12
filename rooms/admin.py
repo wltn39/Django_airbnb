@@ -16,7 +16,7 @@ class ItemAdmin(admin.ModelAdmin):
         return obj.rooms.count()
 
 
-class PhotoInline(admin.TabularInline):
+class PhotoInline(admin.TabularInline): # inline admin
 
     model = models.Photo
 
@@ -37,7 +37,7 @@ class RoomAdmin(admin.ModelAdmin):
         ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths")}),
         (
             "More About the Space",
-            {"fields": ("amenities", "facilities", "house_rules")},,
+            {"fields": ("amenities", "facilities", "house_rules")},
         ),
         ("Last Details", {"fields": ("host",)}),
     )
