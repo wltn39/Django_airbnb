@@ -9,6 +9,8 @@ pillow = "*"
 django-country = "*"
 django-countries = "*"
 matplotlib = "*"
+django-seed = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

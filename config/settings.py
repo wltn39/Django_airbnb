@@ -48,7 +48,7 @@ PROJECT_APPS = ["core.apps.CoreConfig",
                 "conversations.apps.ConversationsConfig",                
                 ]
 
-THIRD_PARTY_APPS = ["django_counters"]
+THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
