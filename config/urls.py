@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static # static 파일 제공을 도움
 
 urlpatterns = [
-    path("", include("core.urls", namespace="core"))
+    path("", include("core.urls", namespace="core")),
     path('admin/', admin.site.urls),
 ]
 
