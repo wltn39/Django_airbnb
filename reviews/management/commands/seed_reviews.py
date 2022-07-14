@@ -19,7 +19,7 @@ class Command(BaseCommand):
         number = options.get("number")
         seeder = Seed.seeder()
         users = user_models.User.objects.all()
-        rooms = room_models.Room.objects.all()
+        rooms = room_models.Room.objects.all
         seeder.add_entity(
             review_models.Review,
             number,
