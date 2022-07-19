@@ -7,3 +7,4 @@ class LoginView(View):
 
     def post(self, request):
         pass
+    
