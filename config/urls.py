@@ -21,6 +21,7 @@ from django.conf.urls.static import static # static 파일 제공을 도움
 urlpatterns = [
     path("", include("core.urls", namespace="core")),
     path("rooms/", include("rooms.urls", namespace="rooms")),
+    path("users/", include("users.urls", namespace="users")),
     path('admin/', admin.site.urls),
 ]
 
