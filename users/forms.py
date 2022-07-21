@@ -19,11 +19,11 @@ class LoginForm(forms.Form):
             self.add_error("email", forms.ValidationError("User does not exist"))            
 
 
-class SignUpForm(forms.Form):
-
-    first_name = forms.CharField(max_length=80)
-    last_name = forms.CharField(max_length=80)
-    email = forms.EmailField()
+class SignUpForm(forms.ModelForm):
+    class Meta:
+        model = models.User
+        fields = ("first_name", "last_name", "email")
+        
     password = forms.CharField(widget=forms.PasswordInput)
     password1 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
 
