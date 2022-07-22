@@ -11,6 +11,7 @@ django-countries = "*"
 matplotlib = "*"
 django-seed = "*"
 psycopg2-binary = "*"
+django-dotenv = "*"
 
 [dev-packages]
 
