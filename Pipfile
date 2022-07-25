@@ -12,6 +12,7 @@ matplotlib = "*"
 django-seed = "*"
 psycopg2-binary = "*"
 django-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 

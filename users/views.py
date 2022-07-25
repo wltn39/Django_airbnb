@@ -1,11 +1,14 @@
 import os
+import requests
 from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, reverse
 from django.contrib.auth import authenticate, login, logout
 from . import forms, models
 
+
 class LoginView(FormView):
+
     template_name = "users/login.html"
     form_class = forms.LoginForm
     success_url = reverse_lazy("core:home")
@@ -23,10 +26,13 @@ def log_out(request):
     logout(request)
     return redirect(reverse("core:home"))
 
+
 class SignUpView(FormView):
+
     template_name = "users/signup.html"
     form_class = forms.SignUpForm
-    success_url = reverse_lazy("core:home")    
+    success_url = reverse_lazy("core:home")
+    initial = {"first_name": "Nicoas", "last_name": "Serr", "email": "itn@las.com"}
 
     def form_valid(self, form):
         form.save()
@@ -38,7 +44,7 @@ class SignUpView(FormView):
         user.verify_email()
         return super().form_valid(form)
 
-    
+
 def complete_verification(request, key):
     try:
         user = models.User.objects.get(email_secret=key)
@@ -61,4 +67,14 @@ def github_login(request):
 
 
 def github_callback(request):
-    pass
+    client_id = os.environ.get("GH_ID")
+    client_secret = os.environ.get("GH_SECRET")
+    code = request.GET.get("code", None)
+    if code is not None:
+        request = requests.post(
+            f"https://github.com/login/oauth/access_token?client_id={client_id}&client_secret={client_secret}&code={code}",
+            headers={"Accept": "application/json"},
+        )
+        print(request.json())
+    else:
+        return redirect(reverse("core:home"))
