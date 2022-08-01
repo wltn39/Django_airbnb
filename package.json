@@ -1,0 +1,16 @@
+// 1. npm init 
+// 2. npm i gulp gulp-postcss gulp-sass gulp-csso node-sass -D
+// 3. npm i tailwindcss -D
+// 4. npx tailwind init
+// 5. npm i autoprefixer -D
+
+{
+  "name": "air_bnb-clone",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wltn39/Django_airbnb.git"
+  },
+  "homepage": "https://github.com/wltn39/Django_airbnb#readme"
+}
